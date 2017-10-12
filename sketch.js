@@ -12,11 +12,13 @@ var achievements = ["achievements", "work", "progress", "learning", "adventures"
 var radio;
 var progress;
 var closing;
+var organization;
 
 //radio button storage variables
   var goodJob;
   var report1;
   var changes;
+  var organize;
 
 //generate button
 var button;
@@ -40,38 +42,46 @@ function setup() {
    textile.size(800,30);
 
  // something to work on comment box
-    var improve = createInput('something to work on');
-    improve.input(improveComment);
-    improve.position(60,450);
-    improve.size(800,30);
+    // var improve = createInput('something to work on');
+    // improve.input(improveComment);
+    // improve.position(60,450);
+    // improve.size(800,30);
 
 
   congratulate();
 
   radio = createRadio();
-  radio.option('Be proud of your hard work!', "You have a lot to be proud of.");
-  radio.option('You pushed yourself beyond', "You consistently took risks and stretched your skills beyond the requirements.");
-  radio.option('You persevered ', "You persevered over technical challenges. You kept a good attitude and stayed focused, and your efforts paid off in success. I hope you are proud of what you have accomplished. ");
-  radio.style('width', '210px');
+  radio.option('High level', "your hand drawings were clear, well thought out and showed a high level of attention to detail.");
+  radio.option('Mid level ', "your hand drawings were good, reasonably thought out and showed a moderate level of attention to detail.");
+  radio.option('Just okay ', "your hand drawings show some good work. Try to focus on the details of your drawings and the accuracy of your lines. ");
+  radio.style('width', '100px');
   radio.position(60,150);
 
   progress = createRadio();
-  progress.option('steady completion', "You have steadily completed the classwork and homework. Your drawings on paper and in the computer are accurate and methodical. Your skills as a designer are growing. I hope you are enjoying your new toolkit!");
-  progress.option('you have excelled', "You consistently worked beyond the requirements of the assignment, exploring new tools and playing around with wacky ideas. Your technical and creative skills are growing as you push yourself to your edges.");
-  progress.option('spotty submission', "Your ideas are strong, but you have struggled with attention to detail. Assignments are often late or incorrectly named. As I observe your work habits in the classroom, I see that you sometimes become frustrated and lose focus. You have demonstrated the technical and creative skills required to complete the work. Believe in yourself, and use mental discipline to work through challenges. I think you will find that you know more than you think you do.");
+  progress.option('clear understanding', "The Rhino tutorials were quite challenging but through perseverance and hard work you were able to complete them all demonstrating a clear understanding of the concepts taught.");
+  progress.option('mid understanding', "The Rhino tutorials were quite challenging but through perseverance and hard work you were able to complete them all, demonstrating a reasonable understanding of the concepts taught.");
+  progress.option('fair understanding', "The Rhino tutorials were quite challenging and tested you throughout, how ever through perseverance and hard work you were able to complete them all demonstrating a fair understanding of the concepts taught.");
   progress.style('width', '150px');
   progress.position(60,250);
 
 
   closing = createRadio();
-  closing.option('keep it up', "I hope these past few weeks have inspired you with the many possibilities available when creative and technical skills intersect. Continue to push yourself and to treat assignments as your own work (rather than something you’re doing for a grade). Take risks and allow yourself to fail on a big idea. Creativity thrives in the absence of perfection. ");
-  closing.option('step it up', "This course moves quickly and you have learned an extraordinary amount in the past few weeks. Focus on your accomplishments. Think of a moment when you were stuck and you worked through the problem (either by asking for help, or by patiently troubleshooting). In the second half of the semester, try to replicate that success. Be an advocate for yourself-- come for help when you need it, and trust your own skills and knowledge. You are doing a great job! ");
-  closing.style('width', '90px');
-  closing.position(60,500);
+  closing.option('very well executed', "Your create a tutorial was drawn and written well and exhibited a clear understanding for Rhino, the vocabulary of the program, and the processes of drawing simple and complex shapes. ");
+  closing.option('Reasonably well', "Your create a tutorial was drawn and written  reasonably well and exhibited a fairly clear understanding for Rhino, the vocabulary of the program, and the processes of drawing simple and complex shapes. ");
+  closing.option('Simple and unclear', "Your create a tutorial was simply drawn and not clearly written, you exhibited a rudimentary understanding for Rhino, the vocabulary of the program, and the processes of drawing simple and complex shapes.  The Rhino program will be referenced throughout your time at Lick, I would suggest taking time to practice some of the tutorials that you found challenging. ");
+  closing.style('width', '140px');
+  closing.position(60,450);
+
+
+  organization = createRadio();
+  organization.option('well organized', "Finally your shared folder is well organized and up to date, keep this up as staying on top of this will be important as we move into the next phase of our Design Technology course. ");
+  organization.option('okay organization', "Finally your shared folder is reasonably well organized and up to date, always make sure to put your files into clear folders this will be important as we move into the next phase of our Design Technology course. ");
+  organization.style('width', '120px');
+  organization.position(60,570);
 
 
   button = createButton('Generate Comment');
-  button.position(60, 619);
+  button.position(60, 700);
   button.mousePressed(generateComment);
 
 
@@ -79,15 +89,17 @@ function setup() {
 }
 
 function draw() {
-  background(209, 60, 249);
+  background(176, 242, 231);
   stroke(255);
 
-  affirmation();
+  rapidViz();
 
 
-  progress1();
+  rhinoTutorials();
 
-  closingStatement();
+  makeTutorial();
+
+  organized();
 
 }
 
@@ -104,28 +116,30 @@ function textileComment(){
 
 }
 
-function improveComment(){
-  improvements = this.value();
-//  console.log(this.value(),',');
-
-}
+// // function improveComment(){
+// //   improvements = this.value();
+// // //  console.log(this.value(),',');
+//
+// }
 
 function congratulate(){
 
-  congratulations = "Congratulations on your "+ achievements[int(random(0, achievements.length))] + " in Design and Technology.";
+  congratulations = "Congratulations on making it through your first quarter of Design and Technology, you have accomplished so much over the past 8 weeks. ";
 //  congratulations.position(60, 100);
 
 }
 
-function affirmation(){
-
-   goodJob = radio.value();
+function rapidViz(){
+noStroke();
+text("Rapid Viz", 60,135 );
+   goodJob = "In the rapid visualization portion of our course at the beginning of the year, "+radio.value();
 
 
 }
 
-function progress1(){
-
+function rhinoTutorials(){
+  noStroke();
+  text("Rhino Tutorials", 60,235 );
   report1 = progress.value();
   // if (report1) {
   //   console.log(report1);
@@ -133,8 +147,9 @@ function progress1(){
 
 }
 
-function closingStatement(){
-
+function makeTutorial(){
+  noStroke();
+  text("Make a tutorial", 60,435 );
  changes = closing.value();
   // if (doIt) {
   //   console.log(doIt);
@@ -142,6 +157,16 @@ function closingStatement(){
 
 }
 
+function organized(){
+  noStroke();
+  text("Folder organization", 60,555 );
+ organize = organization.value();
+  // if (doIt) {
+  //   console.log(doIt);
+  // }
+
+}
+
 function generateComment() {
-  console.log(studentName, congratulations, goodJob, report1, textileGrade, improvements, changes);
+  console.log(studentName, congratulations, goodJob, report1, textileGrade, changes, organize);
 }
