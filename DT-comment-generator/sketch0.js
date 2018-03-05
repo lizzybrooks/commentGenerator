@@ -1,114 +1,98 @@
+// Daniel Shiffman
+// http://codingtra.in
+// http://patreon.com/codingtrain
+// Code for: https://youtu.be/DcoAjEZYies
 
-var img;
-var link;
-var inp;
+var textfield;
+var output;
+var submit;
+var values = [];
 
-var input, button, greeting;
+var studentName = "name";
 
+var testing;
 
-function preload() {
-  img = loadImage("https://makezine.com/wp-content/uploads/2016/08/china-world-trade-center-beijing.jpg");
-  //img = loadImage ("https://makezine.com/wp-content/uploads/2016/08/china-world-trade-center-beijing.jpg");
-  //img = loadImage(link.input);
-  //img = loadImage(img);
-
-}
-
-
+let input1;
+let first = "Write your first input here, e.g. classroom behavior";
 
 function setup() {
-
-    createCanvas(800,700);
-
-    input = createInput();
-      input.position(20, 65);
-
-      button = createButton('submit');
-      button.position(input.x + input.width, 65);
-      button.mousePressed(newImage);
-
-      greeting = createElement('h2', 'Add your own picture by pasting its URL in this box');
-      greeting.position(20, 5);
-
-      textAlign(CENTER);
-      textSize(50);
+  createCanvas(900,1200);
+  // textfield = createInput("your favorite food");
+  textfield = select("#txt");
+  output = select('#output');
 
 
-  // link = createInput('');
-  // link.position(0,0);
+  
+  submit = select("#submit");
+
+  testing = select("#categoryinput")
+
+
+  submit.mousePressed(saveDashboard);
+
+
+  // var name = createInput('name');
+  // name.input(myInputEvent);
+  // name.position(360,100);
   //
-  // cnv = createCanvas(1000, 1000);
-  // cnv.position(0,50);
+  input1 = new DashBox(first, 60,150,800,30);
+  input1.makeInputBox();
 
 }
 
-function draw(){
-    // inp = link.value();
-    //
-    //
-    // console.log (inp);
+// function myInputEvent(){
+//   studentName = this.value();
+//   console.log(studentName, ',');
+//
 
-      // cnv = createCanvas(img.width, img.height);
-      // cnv.position(0,50);
 
-      image(img, 50, 50, img.width, img.height);
-      loadPixels();
-      for(var i=0;i<4*pixels.length;i+=4) {
-        if(pixels[i]+pixels[i+1]+pixels[i+2] >= 510) {
-          //light
-           pixels[i] = 255; //red
-           pixels[i+1] = 255; //green
-           pixels[i+2] = 255; //blue
-         } else if (pixels[i]+pixels[i+1]+pixels[i+2] < 255) {
-           //dark
-              pixels[i] = 211; //63 85 119
-              pixels[i+1] = 152; //226 176 167/ 211, 152, 146
-              pixels[i+2] = 146; //27 86 181
-          }else if (255 <= pixels[i]+pixels[i+1]+pixels[i+2]<510) {
-            //mid
-            pixels[i] = 237; //63 85 119
-            pixels[i+1] = 186; //226 176 167/ 211, 152, 146
-            pixels[i+2] = 177; //27 86 181
-          }
-        }
 
-      updatePixels();
+function saveDashboard() {
 
-    // console.log ("bing bing bong bing bong");
+  values.push(textfield.value());
+  values.push(studentName);
+
+  text(values[0],100,200);
+  console.log(values);
+  console.log(testing);
+
 }
 
+class DashBox {
 
-
-  function newImage() {
-  var link = input.value();
- // greeting.html('displaying image at this link '+link);
-  input.value('');
-
-img = loadImage(link);
-  image(img, 50, 50, img.width, img.height);
-
-  loadPixels();
-  for(var i=0;i<4*pixels.length;i+=4) {
-    if(pixels[i]+pixels[i+1]+pixels[i+2] >= 510) {
-      //light
-       pixels[i] = 255; //red
-       pixels[i+1] = 255; //green
-       pixels[i+2] = 255; //blue
-     } else if (pixels[i]+pixels[i+1]+pixels[i+2] < 255) {
-       //dark
-          pixels[i] = 211; //63 85 119
-          pixels[i+1] = 152; //226 176 167/ 211, 152, 146
-          pixels[i+2] = 146; //27 86 181
-      }else if (255 <= pixels[i]+pixels[i+1]+pixels[i+2]<510) {
-        //mid
-        pixels[i] = 237; //63 85 119
-        pixels[i+1] = 186; //226 176 167/ 211, 152, 146
-        pixels[i+2] = 177; //27 86 181
-      }
+    constructor(category, xposition, yposition, xsize, ysize){
+            this.category = category;
+            //this.great = great;
+            // this.average = average;
+            // this.poor = poor;
+            this.xposition = xposition;
+            this.yposition = yposition;
+            this.xsize = xsize;
+            this.ysize = ysize;
     }
 
-  updatePixels();
-}
+    makeInputBox(){
+// make an element id for category and then use the select function like above to set the contents equal to a variable
+        //print("making input box"+this.category);
+        this.category  = createInput(this.category);
+        this.category.position(this.xposition,this.yposition);
+        this.category.size(this.xsize,this.ysize);
+        this.category.id("categoryinput");
 
 
-  //img = loadImage(link.input);
+        this.great = createInput("Write the you did great option in here");
+        this.great.position(this.xposition,this.yposition+40);
+        this.great.size(this.xsize,this.ysize);
+        //this.great.input(this.pushInput);
+
+        this.average = createInput("Write the you did average option in here");
+        this.average.position(this.xposition,this.yposition+80);
+        this.average.size(this.xsize,this.ysize);
+
+        this.poor = createInput("Write the you did poorly option in here");
+        this.poor.position(this.xposition,this.yposition+120);
+        this.poor.size(this.xsize,this.ysize);
+
+    }
+
+};
