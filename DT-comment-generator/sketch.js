@@ -62,7 +62,7 @@ function setup() {
 
   progress = createRadio();
   progress.option('steady completion', "You have steadily completed the classwork and homework. Your drawings on paper and in the computer are accurate and methodical. Your skills as a designer are growing. I hope you are enjoying your new toolkit!");
-  progress.option('you have excelled', "You worked beyond the requirements of the assignment, exploring new tools and experimenting with new ideas. Your technical and creative skills are growing as you push yourself to your edges.");
+  progress.option('you have excelled', "You worked beyond the requirements of the assignment, exploring new tools and experimenting with new ideas. Your technical and creative skills are growing as you push yourself out of your comfort zone.");
   progress.option('spotty submission', "Your ideas are strong, but you have struggled with attention to detail. Assignments are often late or incorrectly named. As I observe your work habits in the classroom, I see that you sometimes become frustrated and lose focus. You have demonstrated the technical and creative skills required to complete the work. Believe in yourself, and use mental discipline to work through challenges. I think you will find that you know more than you think you do.");
   progress.style('width', '150px');
   progress.position(60,250);
@@ -70,7 +70,7 @@ function setup() {
 
   closing = createRadio();
   closing.option('keep it up', "I hope these past few weeks have inspired you with the many possibilities available when creative and technical skills intersect. Continue to push yourself and to treat assignments as your own work (rather than something you are doing for a grade). Take risks and allow yourself to fail on a big idea. Creativity thrives in the absence of perfection. ");
-  closing.option('step it up', "You have demonstrated what you are capable of producing when you focus and apply yourself. In the second half of the semester, you will switch from doing exercises to creating your own original work. This is an opportunity for you to take control of your own learning. Take ownership of the work that you make and invest yourself in the process of creating. ");
+  closing.option('step it up', "You have demonstrated what you are capable of producing when you focus and apply yourself. In the second half of the semester, you will switch from doing exercises to creating your own original work. This is an opportunity for you to take control of your own learning. Take ownership of the work that you make and invest yourself in the process of creating. I look forward to seeing what you make!");
   closing.option('feel better', "This course moves quickly and you have learned an extraordinary amount in the past few weeks. Focus on your accomplishments. Think of a moment when you were stuck and you worked through the problem (either by asking for help, or by patiently troubleshooting). In the second half of the semester, try to replicate that success. Be an advocate for yourself-- come for help when you need it, and trust your own skills and knowledge. You are doing a great job! ");
   closing.style('width', '90px');
   closing.position(60,500);
