@@ -37,7 +37,7 @@ function setup() {
    name.position(60,60);
 
 // textile comment box
-   var drawing = createInput('Future furniture comment');
+   var drawing = createInput('wood comment');
   drawing.input(drawingFromLife);
    drawing.position(60,300);
    drawing.size(800,30);
@@ -68,7 +68,7 @@ function setup() {
   radio.position(60,150);
 
   progress = createRadio();
-  progress.option('Normal', "You stayed on track and completed all classwork and homework. Your drawings on paper and in the computer are  accurate.  Your skills as a designer are growing. Enjoy your new skillset and celebrate all your accomplishments!");
+  progress.option('Normal', "You stayed on track and completed all classwork. Your wooden component shows your effort and dedication.  Your  woodworking skills are growing. Enjoy your new skillset and celebrate all your accomplishments!");
   progress.option('Excellent', "You consistently worked beyond the requirements of the assignment by challenging yourself with ambitious ideas. Your technical and creative skills are growing as you push yourself forward. Keep it up! ");
   progress.option('You struggled', "Your ideas are strong, but you have struggled with attention to detail. Assignments are often late or incorrectly named. As I observe your work habits in the classroom, I see that you sometimes lose focus. You have demonstrated the technical and creative skills required to complete the work. Believe in yourself, and use mental discipline to work through challenges. ");
   progress.style('width', '500px');
@@ -76,14 +76,14 @@ function setup() {
 
 
   closing = createRadio();
-  closing.option('Clear understanding', "The Rhino tutorials were quite challenging but through dedication and hard work you were able to complete them all demonstrating a clear understanding on how to apply the tools presented in class and beyond. ");
-  closing.option('Reasonable understanding', "The Rhino tutorials were challenging and tested you throughout, yet your commitment and hard work paid off and you were able to complete them all demonstrating a reasonable understanding on how to use the tools presented in class. ");
-  closing.option('Moderate understanding', "The Rhino tutorials were quite challenging and tested you throughout, yet your hard work paid off and you were able to complete them all demonstrating a moderate comprehension on how to apply the tools presented in class. ")
+  closing.option('Clear understanding', "Learning and understanding how to use all the machines in the woodshop can be quite challenging but through dedication and hard work you were able to understand how to safely operate the equipments in the woodshop. You demonstrating a clear understanding on how to safely use all the tools presented in class and beyond. Congratulations!!");
+  closing.option('Reasonable understanding', "Learning and understanding how to use all the machines in the woodshop was challenging and tested you throughout, yet your commitment and hard work paid off and you were able to complete the wooden component of your lamp demonstrating a reasonable understanding on how to use the tools presented in class. ");
+  closing.option('Moderate understanding', "Learning and understanding how to use all the machines in the woodshop were quite challenging and tested you throughout, yet your hard work paid off and you were able to to complete the wooden component of your lamp demonstrating a moderate comprehension on how to use the tools presented in class. ")
   closing.style('width', '700px');
   closing.position(60,410);
 
   bye = createRadio();
-  bye.option('Flourish!',"I hope your time in DT has inspired to open your eyes and mind to the endless possibilities available when creativity and technical skills intersect. I encourage you to continue taking risks by treating each assignments as your own work (rather than an assignment). Allow yourself to fail on a big ideas rather than playing it safe because those failures are nothing more than a learning wave. Give your creativity a chance to flourish !!");
+  bye.option('Flourish!',"I hope your time in the woodshop has inspired you to open your eyes and mind to the endless possibilities available when creativity and technical skills intersect. I encourage you to continue taking risks by treating each assignments as your own work (rather than an assignment). Allow yourself to fail on a big ideas rather than playing it safe because those failures are nothing more than a learning wave. Give your creativity a chance to flourish !!");
   bye.option('You can do it!', "This is a fast-paced class. You have learned a tremendous amount of tools and technical skill in the past few weeks. Focus on all your accomplishments! Think about how much you have grown from the first day of class. In the second half of the semester, I encourage you to be an advocate for yourself-- come for help when you need it, and trust your own skills and knowledge. You are doing a great job!");
   bye.style('width', '700px');
   bye.position(60, 460 );
@@ -103,7 +103,7 @@ function draw() {
   textSize(14);
   text("1.",60,140);
   text("2.", 60,220);
-  text("Rhino", 60,400);
+  text("Wood", 60,400);
 //  stroke(255);
 
 
