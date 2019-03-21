@@ -64,7 +64,7 @@ function setup() {
   radio.position(60,150);
 
   space = createRadio();
-  space.option('Make space', "You are a strong designer, but you tend to draw a lot of attention to yourself. Be mindful of the other students in the room. Look for ways that you can lift up your peers, and make space for them to shine.");
+  space.option('Make space', "You are a strong designer, but you sometimes you get caught up in socializing and distract yourself and your classmates. Be mindful of the other students in the room. Look for ways that you can lift up your peers, and make space for them to shine.");
   space.option('Take space', "I sense that you prefer to solve puzzles independently, and to work through a problem alone when you get stuck. I challenge you to take more space: ask for help when you need it, and share your process with the group. Your classmates can learn a lot from collaborating with you. ");
   space.option('You rock ', "You have been a supportive collaborator, drawing out your classmates and encouraging them to shine. You also modeled focus and resilience in your ability to work independently through a challenging puzzle. These are skills that will serve you throughout your academic career. ");
   space.style('width', '210px');
@@ -72,9 +72,9 @@ function setup() {
 
 // acrylic cuts
   progress = createRadio();
-  progress.option('steady completion', "You have steadily completed the coding and laser cutting exercises. In the process you demonstrated perseverence. Your lamp is coming together beautifully. ");
+  progress.option('steady completion', "You have steadily completed the coding and laser cutting exercises. You overcame challenges as they arose. Your lamp is coming together beautifully. ");
   progress.option('you have excelled', "You worked beyond the requirements of the programming and laser cutting unit, exploring the limits of the tools and experimenting with creative ideas. Your technical and creative skills are growing as you push yourself out of your comfort zone.");
-  progress.option('spotty submission', "Your ideas are strong, but you're struggling to bring it all together. Remember to take these processes-- both the hand work and the digital skills-- step by step. Relax, focus, and finish one task before you begin another. You will get there!");
+  progress.option('spotty submission', "You have done the hard work of solving the coding challenges and learning to use the laser cutter, but you forgot to turn in a few of your assignments, and that's hurting your grade. I see your progress in the classroom, but I need to also see it in the gradebook. Please turn in your work so I can give you the grade that you deserve!");
   progress.style('width', '150px');
   progress.position(60,350);
 
