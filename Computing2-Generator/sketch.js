@@ -27,6 +27,8 @@ function setup() {
 
 //create canvas section
   createCanvas(900, 1000);
+  background(209, 233, 249);
+  stroke(255);
 
 // //name box
    var name = createInput('name');
@@ -34,46 +36,43 @@ function setup() {
    name.position(60,60);
 
 // textile comment box
-   var textile = createInput('textile comment');
+   var textile = createInput('summarize python learning log');
    textile.input(textileComment);
-   textile.position(60,350);
+   textile.position(60,150);
    textile.size(800,30);
-
- // something to work on comment box
-    var improve = createInput('something to work on');
-    improve.input(improveComment);
-    improve.position(60,450);
-    improve.size(800,30);
+//
 
 
   congratulate();
 
+//python
+  //text("python")
   radio = createRadio();
-  radio.option('Be proud of your hard work!', "You have a lot to be proud of.");
-  radio.option('You pushed yourself beyond', "You consistently took risks and stretched your skills beyond the requirements.");
-  radio.option('You learned so much already', "You have learned so much in these past few weeks that it is hard to believe you only just began coding.");
-  radio.option('You persevered ', "You persevered over technical challenges. You kept a good attitude and stayed focused, and your efforts are paying off in success. I hope you are proud of what you have accomplished. ");
-  radio.style('width', '210px');
-  radio.position(60,150);
+  radio.option('You were advanced and pushed yourself', "You took advantage of the opportunity to push yourself deeper into the python language and to explore topics that challenged and stretched your existing knowledge. I hope this time was useful and rewarding to you. ");
+  radio.option('You were beginner and pushed yourself', "You took advantage of the opportunity to learn the Python language. You worked in a focused and self-directed way to overcome the obstacles and uncertainty involved in acquiring a new skill set. I am so proud of you. ");
+  radio.option('You played it safe ', "You engaged in the Python exercises, but I think that you could have pushed yourself further. This was an open-ended assignment, and you fulfilled all the requirements, but you stayed close to your comfort zone. Don't be afraid to take a risk in this class. ");
+  radio.style('width', '280px');
+  radio.position(60,250);
 
+//community computing outreach and research
+  //text("community computing outreach and research", 60,200);
   progress = createRadio();
-  progress.option('steady completion', "You have steadily completed the classwork and homework (drawing with code, functions, variables, and loops worksheets) and your skills as a programmer are growing. ");
-  progress.option('you have excelled', "You have excelled in the small assignments, consistently pushing yourself trying new things. This effort shows in the quality of your textile project. I hope you feel that you are gaining some mastery over the art of programming (yes, I do think it is artful). ");
-  progress.option('spotty submission', "Your ideas and skills are strong, but your work submission has been spotty. Homework is sometimes late or missing. Make sure to communicate with me if you have trouble finishing or submitting an assignment. I am here to help you! ");
-  progress.style('width', '150px');
-  progress.position(60,250);
+  progress.option('Engaged wholeheartedly', "You brought all of your skills to the task of researching potential Community Computing projects. You participated in the outreach effort, met with potential clients, and explored various technical solutions to determine whether the project is viable. This is what it takes to design and build software! ");
+  progress.option('Own this thing', "You participated in the task of researching potential Community Computing projects and you presented your work to the larger group. Some of your research was great, but I think you could have gone deeper. As a software designer, it's important to talk with clients and brainstorm a variety of ways to approach a potential puzzle. The research and human outreach component is at least as important as the technical build! ");
+  progress.style('width', '190px');
+  progress.position(60,350);
 
-
+// leadership
+ // text("leadership",60,450);
   closing = createRadio();
-  closing.option('keep it up   ', "I hope these past few weeks have opened your mind to the myriad of possibilities available to a  creative programmer. These are your tools now! Take a deep breath and congratulate yourself on learning a new language. Allow yourself to explore and experiment. Try out some weird ideas. I look forward to seeing what you create. ");
-  closing.option('invest more  ', "You have invested your time and energy in learning the foundational skills of writing software. It takes discipline to learn these tools, but once you have them, you can make work that you genuinely care about. I hope that you are now excited about what you can do as a programmer! In the second half of the semester, I want to see you take ownership of your work. Treat these projects as something that you are doing for yourself, not for a class. I look forward to seeing what you create!");
-  closing.option('be patient', "You have wildly creative ideas that at the moment are surpassing your technical skills. That's actually a great problem to have (imagine if it was the other way around)! Be patient with the process of learning programming. It takes time and it can be humbling, but when you get something to work, the power is extraordinary.");
+  closing.option('keep it up   ', "I hope you are proud of what you've accomplished and excited to embark on the Community Build. Push yourself to engage more deeply with your teammates. Be kind and generous, and expect to be surprised by what you and your team will accomplish. ");
+  closing.option('invest more  ', "You are an excellent software engineer. Don't be afraid to invest yourself in this discipline, and to trust that you will find solutions to all the puzzles that you encounter. Take ownership of this skill set. ");
   closing.style('width', '100px');
-  closing.position(60,500);
+  closing.position(60,450);
 
 
   button = createButton('Generate Comment');
-  button.position(60, 619);
+  button.position(60, 519);
   button.mousePressed(generateComment);
 
 
@@ -81,8 +80,7 @@ function setup() {
 }
 
 function draw() {
-  background(209, 233, 249);
-  stroke(255);
+
 
   affirmation();
 
@@ -114,7 +112,7 @@ function improveComment(){
 
 function congratulate(){
 
-  congratulations = "Congratulations on your "+ achievements[int(random(0, achievements.length))] + " in Computing class thus far.";
+  congratulations = "Congratulations on your "+ achievements[int(random(0, achievements.length))] + " in Computing 2 thus far.";
 //  congratulations.position(60, 100);
 
 }
@@ -145,5 +143,5 @@ function closingStatement(){
 }
 
 function generateComment() {
-  console.log(studentName, congratulations, goodJob, report1, textileGrade, improvements, changes);
+  console.log(studentName, congratulations, textileGrade, goodJob, report1, changes);
 }
