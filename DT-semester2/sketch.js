@@ -74,7 +74,7 @@ function setup() {
   progress = createRadio();
   progress.option('steady completion', "You have steadily completed the coding and laser cutting exercises. You overcame challenges as they arose. Your lamp is coming together beautifully. ");
   progress.option('you have excelled', "You worked beyond the requirements of the programming and laser cutting unit, exploring the limits of the tools and experimenting with creative ideas. Your technical and creative skills are growing as you push yourself out of your comfort zone.");
-  progress.option('spotty submission', "You have done the hard work of solving the coding challenges and learning to use the laser cutter, but you forgot to turn in a few of your assignments, and that's hurting your grade. I see your progress in the classroom, but I need to also see it in the gradebook. Please turn in your work so I can give you the grade that you deserve!");
+  progress.option('trouble finishing', "You have done the hard work of solving the coding challenges and learning to use the laser cutter, but you're having trouble applying these skills to your own lamp. I think you may be getting in your own way, second-guessing your ideas when you should believe in yourself and persevere through challenges as they arise.");
   progress.style('width', '150px');
   progress.position(60,350);
 
