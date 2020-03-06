@@ -64,8 +64,10 @@ function setup() {
   radio.position(60,150);
 
   space = createRadio();
-  space.option('Make space', "You are a strong designer, but you sometimes you get caught up in socializing and distract yourself and your classmates. Be mindful of the other students in the room. Look for ways that you can lift up your peers, and make space for them to shine.");
-  space.option('Take space', "I sense that you prefer to solve puzzles independently, and to work through a problem alone when you get stuck. I challenge you to take more space: ask for help when you need it, and share your process with the group. Your classmates can learn a lot from collaborating with you. ");
+  space.option('socializer', "You are a strong designer, but you sometimes you get caught up in socializing and distract yourself and your classmates. Practice checking in with yourself. When you lose focus, take a short break, and redirect your attention back to the project.");
+  space.option('shutting down', "You are a strong designer, but you sometimes you get stuck and have trouble moving on. Practice checking in with yourself. When you lose focus, take a short break to regain confidence, then redirect your attention back to the project.");
+  space.option('Make space privilege', "You are hungry for skills and knowledge, and you have thrived in the technical learning environment. Be mindful of the other students in the room. If you're ahead, look for ways that you can lift up your peers and make space for them to shine.")
+  space.option('Take space shyness', "I sense that you prefer to solve puzzles independently, and to work through a problem alone when you get stuck. I challenge you to take more space: ask for help when you need it, and share your process with the group. Your classmates can learn a lot from collaborating with you. ");
   space.option('You rock ', "You have been a supportive collaborator, drawing out your classmates and encouraging them to shine. You also modeled focus and resilience in your ability to work independently through a challenging puzzle. These are skills that will serve you throughout your academic career. ");
   space.style('width', '210px');
   space.position(60,250);
@@ -74,9 +76,9 @@ function setup() {
   progress = createRadio();
   progress.option('steady completion', "You have steadily completed the coding and laser cutting exercises. You overcame challenges as they arose. Your lamp is coming together beautifully. ");
   progress.option('you have excelled', "You worked beyond the requirements of the programming and laser cutting unit, exploring the limits of the tools and experimenting with creative ideas. Your technical and creative skills are growing as you push yourself out of your comfort zone.");
-  progress.option('trouble finishing', "You have done the hard work of solving the coding challenges and learning to use the laser cutter, but you're having trouble applying these skills to your own lamp. I think you may be getting in your own way, second-guessing your ideas when you should believe in yourself and persevere through challenges as they arise.");
+  progress.option('trouble finishing', "You have done the hard work of solving the coding challenges and learning to use the laser cutter, but you're having trouble applying these skills to your own lamp. I think you may be getting in your own way, second-guessing your ideas when you should believe in yourself.");
   progress.style('width', '150px');
-  progress.position(60,350);
+  progress.position(60,450);
 
 
 // take space, make space
@@ -85,11 +87,11 @@ function setup() {
   closing.option('step it up', "You have demonstrated what you are capable of producing when you focus and apply yourself. In the second half of the semester, you will see this work come together in a finished lamp. This is an opportunity for you to take ownership of the work that you make and invest yourself in the process of creating. I look forward to seeing what you make!");
   closing.option('feel better', "This course moves quickly and you have learned an extraordinary amount in the past few weeks. Focus on your accomplishments. Think of a moment when you were stuck and you worked through the problem (either by asking for help, or by patiently troubleshooting). As you work toward completing your lamp, try to replicate that success. Be an advocate for yourself-- come for help when you need it, and trust your own skills and knowledge. You are doing a great job! ");
   closing.style('width', '90px');
-  closing.position(60,500);
+  closing.position(60,600);
 
 
   button = createButton('Generate Comment');
-  button.position(60, 619);
+  button.position(60, 719);
   button.mousePressed(generateComment);
 
 
